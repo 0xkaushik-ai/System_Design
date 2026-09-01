@@ -32,4 +32,40 @@ operating-system threads.
   - Suitable for thousands of concurrent tasks
   - Less expensive than manually creating threads
 
-- In go also main does not wait automatically .The programmg
+- In go also main does not wait automatically .The program exits when main exit . You need synchronization to wait . 
+
+```go 
+
+ package main
+
+  import (
+        "fmt"
+        "sync"
+  )
+
+  func sayHello() {
+        fmt.Println("Hello from goroutine")
+  }
+
+  func main() {
+        var wg sync.WaitGroup
+
+        wg.Add(1)
+
+        go func() {
+                defer wg.Done()
+                sayHello()
+        }()
+
+        wg.Wait()
+  }
+```
+- Each goroutine has its own execution flow .
+- A normal function run directly.
+- A go routine runs independently . 
+- Goroutine need communication . GoRoutine often need to share results or coordinate work . In go this is commonly done with 
+ - Channels
+ - sync.WaitGroups 
+ - sync.Mutex 
+ - context.Context 
+
