@@ -19,15 +19,14 @@ func main() {
 }
 
 // channels let go routne communicate with each other and synchronize their execution, and they are used to send and receive messages between go routines.
- ch := make(chan string)
+// ch := make(chan string)
 
 //  Creates a channel that carries strings.
 
- // ch <- "message"
+// ch <- "message"
 
- // Sends a value into the channel.
+// Sends a value into the channel.
 
-  //message := <-ch
-	  // Receives a value from the channel and assigns it to the variable message.
-	  // The receving operation waits until the go routine sends a message . This means you dont need time.sleep .
-	  
+//message := <-ch
+// Receives a value from the channel and assigns it to the variable message.
+// The receving operation waits until the go routine sends a message . This means you dont need time.sleep .
