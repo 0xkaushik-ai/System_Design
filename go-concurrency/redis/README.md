@@ -1,3 +1,10 @@
+- Redis is a seperate server . YOur go programm connects it using redis client .
+- `go get github.com/redis/go-redis/v9`
+
+
+
+
+
 1. Redis Fundamentals
      - Redis Overview
      - Key-Value Data Model
